@@ -47,9 +47,18 @@ EventLogger.prototype.makeRequest = function (endpoint, payload, cb) {
     payload.development_mode = this.devMode;
 
     req = request[endpoint.method](requestOptions, function (err, res, body) {
+        var json;
+
         if (err) return cb(err);
 
-        cb(err, res, JSON.parse(body));
+        try {
+            json = JSON.parse(body);
+        } 
+        catch (e) {
+            err = e;
+        }
+
+        cb(err, res, json);
     });
 
     payload = JSON.stringify(payload);
