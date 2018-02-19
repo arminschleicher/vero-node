@@ -1,5 +1,5 @@
 {
-  "name": "vero",
+  "name": "@hubdoc/vero",
   "version": "1.0.2",
   "description": "Simpel Node.js wrapper for the Vero API",
   "bugs": {
