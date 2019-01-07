@@ -1,5 +1,5 @@
 {
-  "name": "vero",
+  "name": "@hubdoc/vero",
   "version": "1.0.2",
   "description": "Simpel Node.js wrapper for the Vero API",
   "bugs": {
@@ -19,5 +19,8 @@
   "engines": {
     "node": ">=0.4.0"
   },
-  "directories": {}
+  "directories": {},
+  "publishConfig": {
+    "registry": "https://hubdoc.jfrog.io/hubdoc/api/npm/npm-local/"
+  }
 }
