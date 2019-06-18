@@ -14,6 +14,11 @@ var ENDPOINTS = {
         url: BASE_URL + 'api/v2/users/edit'
     },
 
+    DELETE_USER: {
+        method: 'post',
+        url: BASE_URL + 'api/v2/users/delete'
+    },
+
     EDIT_TAGS: {
         method: 'put',
         url: BASE_URL + 'api/v2/users/tags/edit'
@@ -27,7 +32,7 @@ var ENDPOINTS = {
     ADD_EVENT: {
         method: 'post',
         url: BASE_URL + 'api/v2/events/track'
-    }
+    },
 }
 
 var EventLogger = function (authToken, devMode) {
@@ -93,6 +98,16 @@ EventLogger.prototype.editUser = function (id, changes, cb) {
     };
 
     this.makeRequest(ENDPOINTS.EDIT_USER, payload, cb);
+}
+
+EventLogger.prototype.deleteUser = function (id, cb) {
+    var payload;
+
+    payload = {
+        id: id,
+    };
+
+    this.makeRequest(ENDPOINTS.DELETE_USER, payload, cb);
 }
 
 EventLogger.prototype.addTags = function (id, tags, cb) {
